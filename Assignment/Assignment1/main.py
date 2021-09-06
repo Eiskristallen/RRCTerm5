@@ -50,20 +50,20 @@ iss.setheading(90)
 iss.penup()
 iss.goto(longitude, latitude)
 
-# potion of space center, Houston
-latitudeHous = 29.5502
-longitudeHous = -95.097
-# mark the location of space center on the map
+# potion of Winipeg
+latitudeWinnipeg = 49.8951
+longitudeWinnipeg = -97.1384
+# mark the location on the map
 location = turtle.Turtle()
 location.penup()
-location.color('yellow')
-location.goto(longitudeHous, latitudeHous)
+location.color('red')
+location.goto(longitudeWinnipeg, latitudeWinnipeg)
 location.dot(5)
 location.hideturtle()
 
 # get the time that when spece station is going to move to the location of space center
 url = 'http://api.open-notify.org/iss-pass.json?lat=' + \
-    str(latitudeHous) + '&lon=' + str(longitudeHous)
+    str(latitudeWinnipeg) + '&lon=' + str(longitudeWinnipeg)
 response = urllib.request.urlopen(url)
 result = json.loads(response.read())
 
