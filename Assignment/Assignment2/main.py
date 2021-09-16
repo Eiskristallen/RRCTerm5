@@ -21,13 +21,20 @@ while 'next' in weather and pages < 9:
     pages += 1
 # define list of termprature data
 list_temp = [record['ambient_temp'] for record in weather_data]
+# list_ground_temp = [record['ground_temp'] for record in weather_data]
+list_humidity = [record['humidity'] for record in weather_data]
 # define a list to store time stamps of termprature data
 list_time_stamps = [parser.parse(record['reading_timestamp'])
                     for record in weather_data]
 
-# use all data to draw graphic 
+# # use all data to draw graphic 
 plt.plot(list_time_stamps, list_temp)
+# plt.plot(list_time_stamps, list_ground_temp )
+plt.plot(list_time_stamps, list_humidity )
 # Set the axis labels
-plt.ylabel('Temperature')
+plt.ylabel('Temperature,Ground Temperature,Humidity')
+# plt.ylabel('Ground Temperature')
+# plt.ylabel('Humidity')
 plt.xlabel('Time')
 plt.show()
+
