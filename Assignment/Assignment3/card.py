@@ -1,3 +1,6 @@
+"""
+this module will generate a deck of cards to use
+"""
 import random
 
 class Card:
@@ -11,7 +14,8 @@ class Card:
     def __repr__(self):
         """
         Return the number and suit of card
-        """  
+        """ 
+        # return the number and suit of card
         return self._number + " of " + self._suit
 
     @property
@@ -79,6 +83,7 @@ class Deck:
         for i in range(no_of_cards):
             dealt_card = self._cards.pop(0)
             dealt_cards.append(dealt_card)
+        # return the cards that being remove
         return dealt_cards
 
     def __repr__(self):
@@ -86,6 +91,7 @@ class Deck:
         return the number of cards in current deck instance
         """
         cards_in_deck = len(self._cards)
+         # return the number of cards within a deck
         return "Deck of " + str(cards_in_deck) + " cards"
         
 deck = Deck()
