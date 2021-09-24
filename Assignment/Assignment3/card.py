@@ -3,18 +3,21 @@ this module will generate a deck of cards to use
 """
 import random
 
+
 class Card:
+    """
+    The Card class represent a single playing card and it's going to initialised by passing a suit and number 
+    """
+
     def __init__(self, suit, number):
-        """
-        The Card class represent a single playing card and it's going to initialised by passing a suit and number 
-        """
+
         self._suit = suit
         self._number = number
 
     def __repr__(self):
         """
         Return the number and suit of card
-        """ 
+        """
         # return the number and suit of card
         return self._number + " of " + self._suit
 
@@ -24,6 +27,7 @@ class Card:
          Get & Set the suit of Card
         """
         return self._suit
+
     @suit.setter
     def suit(self, suit):
         """
@@ -46,7 +50,7 @@ class Card:
         """
         setter, set the value of number
         """
-        valid = [str(n) for n in range(2,11)] + ["J", "Q", "K", "A"]
+        valid = [str(n) for n in range(2, 11)] + ["J", "Q", "K", "A"]
         if number in valid:
             self._number = number
         else:
@@ -54,10 +58,12 @@ class Card:
 
 
 class Deck:
+    """
+    The Deck class represent a bunch of playing cards put in order  
+    """
+
     def __init__(self):
-        """
-        The Deck class represent a bunch of playing cards put in order  
-        """
+
         self._cards = []
         self.populate()
 
@@ -66,8 +72,8 @@ class Deck:
         generate a deck of cards
         """
         suits = ["hearts", "clubs", "diamonds", "spades"]
-        numbers = [str(n) for n in range(2,11)] + ["J", "Q", "K", "A"]
-        self._cards = [ Card(s, n) for s in suits for n in numbers ]
+        numbers = [str(n) for n in range(2, 11)] + ["J", "Q", "K", "A"]
+        self._cards = [Card(s, n) for s in suits for n in numbers]
 
     def shuffle(self):
         """
@@ -91,8 +97,9 @@ class Deck:
         return the number of cards in current deck instance
         """
         cards_in_deck = len(self._cards)
-         # return the number of cards within a deck
+        # return the number of cards within a deck
         return "Deck of " + str(cards_in_deck) + " cards"
-        
+
+
 deck = Deck()
 print(deck)
