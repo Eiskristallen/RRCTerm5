@@ -4,6 +4,8 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 .DS_Store
+node_modules
+tmp
 # Other files and folders
 .settings/
 
