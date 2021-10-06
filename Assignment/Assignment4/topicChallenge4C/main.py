@@ -52,6 +52,6 @@ while len(num_list.list_num) < 15:
     val = val.rsplit(',')
     new_list = [int(item) for item in val]
     num_list.list_num = num_list.list_num + new_list
-    print(num_list.find_max())
-    print(num_list.stand_diviation())
-    print(num_list.avg_cal())
+    print(f"std_dev:{num_list.stand_diviation()}")
+    print(f"avg:{num_list.avg_cal()}")
+    print(f"max:{num_list.find_max()}")
