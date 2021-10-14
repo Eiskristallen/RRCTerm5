@@ -4,8 +4,7 @@ class MyClass:
         self.mode = mode
 
     def __enter__(self):
-        with open(self.filename, self.mode) as myfile:
-            self.myfile = myfile
+        self.myfile = open(self.filename, self.mode)
         return self.myfile
 # miss args
 
@@ -13,5 +12,5 @@ class MyClass:
         self.myfile.close()
 
 
-with MyClass('test.txt', 'r') as myfile:
-    print(myfile)
+with MyClass("test.txt", "r") as f:
+    print(f.read())
