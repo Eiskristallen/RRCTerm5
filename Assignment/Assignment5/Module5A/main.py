@@ -61,12 +61,15 @@ class MyMath:
         return max_val
 
 
-num_list = MyMath(["sad", "sad"]).stand_diviation()
-# while len(num_list.list_num) < 15:
-#     val = input("Enter list of your value: ")
-#     val = val.rsplit(',')
-#     new_list = [int(item) for item in val]
-#     num_list.list_num = num_list.list_num + new_list
-#     print(num_list.find_max())
-#     print(num_list.stand_diviation())
-#     print(num_list.avg_cal())
+num_list = MyMath([])
+try:
+    while len(num_list.list_num) < 15:
+        val = input("Enter list of your value: ")
+        val = val.rsplit(',')
+        new_list = [int(item) for item in val]
+        num_list.list_num = num_list.list_num + new_list
+        print(num_list.find_max())
+        print(num_list.stand_diviation())
+        print(num_list.avg_cal())
+except Exception as e:
+    print("An exception occurred")
