@@ -1,4 +1,4 @@
 Amethyst #9966cc
 Apricot #fbceb1
-Aqua #00ffff
+Azure #007fff
 Blond #faf0be

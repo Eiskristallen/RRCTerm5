@@ -2,6 +2,7 @@ class MyClass:
     def __init__(self, filename, mode):
         self.filename = filename
         self.mode = mode
+        self.myfile = None
 
     def __enter__(self):
         self.myfile = open(self.filename, self.mode)
