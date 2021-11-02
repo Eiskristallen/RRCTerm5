@@ -58,6 +58,7 @@ class MyHTMLParser(HTMLParser):
         self.isTrTagEnd = False
         self.start = False
         self.data = []
+        self.colors = {}
 
     def handle_starttag(self, tag, attrs):
         if tag == 'a':
@@ -75,14 +76,13 @@ class MyHTMLParser(HTMLParser):
             self.isTrTagInit = False
             if "#2c1608" in data:
                 self.start = False
+                self.data.append(data)
+                self.colors = dict(self.data[i:i+2]
+                                   for i in range(0, len(self.data), 2))
+                self.colors['Total colors:'] = str(len(self.data)/2)
+                for val in self.colors:
+                    print(val + ':'+self.colors[val])
             self.data.append(data)
-
-    def pack_data(self):
-        mycolordict = dict(self.data[i:i+2]
-                           for i in range(0, len(self.data), 2))
-        mycolordict['count'] = str(len(self.data)/2)
-        for val in mycolordict:
-            print(val + ':'+mycolordict[val])
 
 
 myparser = MyHTMLParser()
@@ -90,4 +90,3 @@ myparser = MyHTMLParser()
 with urllib.request.urlopen('https://www.colorhexa.com/color-names') as response:
     html = str(response.read())
 myparser.feed(html)
-myparser.pack_data()
