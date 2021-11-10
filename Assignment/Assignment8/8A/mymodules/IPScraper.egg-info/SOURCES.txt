@@ -1,0 +1,6 @@
+ipscraper.py
+setup.py
+IPScraper.egg-info/PKG-INFO
+IPScraper.egg-info/SOURCES.txt
+IPScraper.egg-info/dependency_links.txt
+IPScraper.egg-info/top_level.txt

@@ -1,0 +1,4 @@
+This package uses
+HTMLParser to scrape colors and their hex values from the
+https://www.colorhexa.com/color
+names website.

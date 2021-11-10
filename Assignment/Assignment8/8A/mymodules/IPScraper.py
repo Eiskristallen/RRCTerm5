@@ -71,8 +71,8 @@ class MyIpData(HTMLParser):
 
     def handle_data(self, data):
         result = ""
-        if ("Address" in data) & self.isBodyBegin & self.isBodyStop:
-            result += data.split(":")[0]
+        if ("Address" in data):
+            result += data.split(":")[1]
             print(result.strip())
 
 
@@ -81,4 +81,3 @@ myparser = MyIpData()
 with urllib.request.urlopen('http://checkip.dyndns.org') as response:
     html = str(response.read())
 myparser.feed(html)
-print(myparser.get_starttag_text())
